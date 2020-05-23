@@ -25,6 +25,14 @@ async function getRandomUser() {
     addData(newUser);
 }
 
+function doubleMoney() {
+    data = data.map(user => {
+        return { ...user,
+            money: user.money * 2
+        }
+    })
+}
+
 function addData(obj) {
     data.push(obj);
 
