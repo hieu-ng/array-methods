@@ -7,7 +7,24 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 
 let data = [];
 
+getRandomUser();
+getRandomUser();
+getRandomUser();
+
 async function getRandomUser() {
     const res = await fetch('https://randomuser.me/api');
     const data = await res.json();
+
+    const user = data.result[0];
+
+    const newUser = {
+        name: `${user.name.first} ${user.name.last}`,
+        money: Math.floor(Math.random() * 1000000)
+    };
+
+    addData(newUser);
+}
+
+function addData(obj) {
+    data.push(obj);
 }
