@@ -43,3 +43,8 @@ function updateDOM(providedData = data) {
         main.appendChild(element);
     })
 }
+
+function formatMoney(number) {
+    return '$' + number.toFixed(2)
+        .replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
